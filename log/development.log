@@ -694,3 +694,25 @@ RuntimeError ({"utf8"=>"✓", "_method"=>"patch", "authenticity_token"=>"PfBGxpc
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.0ms)
+
+
+Started GET "/posts/new" for 97.120.201.67 at 2018-09-12 02:59:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 263ms (Views: 245.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 97.120.201.67 at 2018-09-12 02:59:51 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OMwUMCjh+4kNC6qtHSs1CD4UPZKiE7ZBuneKN9pM0kld77L9lBgabwOgGOhhidgwhcL5tfvaGfEJqej4hzTk+A==", "title"=>"Testing", "description"=>"Just testhing out", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Testing"], ["description", "Just testhing out"], ["created_at", "2018-09-12 02:59:51.252512"], ["updated_at", "2018-09-12 02:59:51.252512"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://165.227.31.156:46750/posts/4
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/4" for 97.120.201.67 at 2018-09-12 02:59:51 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
