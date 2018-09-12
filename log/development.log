@@ -940,3 +940,35 @@ Processing by PostsController#show as HTML
   Parameters: {"id"=>"3"}
   [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 97.120.201.67 at 2018-09-12 03:03:08 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 97.120.201.67 at 2018-09-12 03:03:38 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 72ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 97.120.201.67 at 2018-09-12 03:03:48 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"drhlexwTjNBh/RUSuiMqKGiRVwmZ/ce4VvdFsq1jaXcTm8O2oOptNm9Wp1fGgccQ00eTLsA0aAjlKSd98Btfxg==", "title"=>"Hello", "description"=>"Testing this description.", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Hello"], ["description", "Testing this description."], ["created_at", "2018-09-12 03:03:48.016407"], ["updated_at", "2018-09-12 03:03:48.016407"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.31.156:46750/posts/5
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/5" for 97.120.201.67 at 2018-09-12 03:03:48 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.2ms)
